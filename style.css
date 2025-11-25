@@ -1,0 +1,14 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+#theme-toggle {
+    border: none;
+    background-color: white;
+}
