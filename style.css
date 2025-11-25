@@ -4,6 +4,14 @@ body {
     color: black;
 }
 
+#brother-toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* Optional: Add padding, background, etc. for styling */
+  padding: 10px;
+}
+
 .hidden {
     display: none;
 }

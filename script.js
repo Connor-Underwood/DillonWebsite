@@ -32,12 +32,80 @@ function toggleTheme() {
     }
 }
 
-const clickMeButton = document.getElementById("click-me-button")
-clickMeButton.addEventListener("click", didPressButton)
+function toggleBrother() {
+    const visibleBrother = localStorage.getItem("visibleBrother")
+    if (visibleBrother === "Dillon") {
+        hideDillon()
+        showConnor()
+        localStorage.setItem("visibleBrother", "Connor")
+        // Show Connor's page
+    } else if (visibleBrother === "Connor") {
+        hideConnor()
+        showDillon()
+        localStorage.setItem("visibleBrother", "Dillon")
+        // Show Dillon's page
+    } else {
+        alert("Invalid brother!")
+    }
+}
 
-const resetButton = document.getElementById("reset-button")
-resetButton.addEventListener("click", reset)
+function createBrotherToggle() {
+    let brotherToggle = document.createElement('button')
+    brotherToggle.id = "brother-toggle"
+    brotherToggle.innerHTML = "Toggle Brother"
+    brotherToggle.addEventListener("click", toggleBrother)
+    const body = document.body
+    body.appendChild(brotherToggle)
 
-const themeToggle = document.getElementById("theme-toggle")
-themeToggle.addEventListener("click", toggleTheme)
+}
+
+
+function showConnor() {
+    const connorPage = document.getElementById("connor-page")
+    connorPage.classList.remove("hidden")
+}
+
+function hideConnor() {
+    const connorPage = document.getElementById("connor-page")
+    connorPage.classList.add("hidden")
+}
+
+function showDillon() {
+    const dillonPage = document.getElementById("dillon-page")
+    dillonPage.classList.remove("hidden")
+    const clickMeButton = document.getElementById("click-me-button")
+    clickMeButton.addEventListener("click", didPressButton)
+
+    const resetButton = document.getElementById("reset-button")
+    resetButton.addEventListener("click", reset)
+
+    const themeToggle = document.getElementById("theme-toggle")
+    themeToggle.addEventListener("click", toggleTheme)
+}
+
+function hideDillon() {
+    const dillonPage = document.getElementById("dillon-page")
+    dillonPage.classList.add("hidden")
+}
+
+function generalInit() {
+
+    createBrotherToggle()
+    let visibleBrother = localStorage.getItem("visibleBrother")
+
+    if (visibleBrother === "Dillon") {
+        showDillon()
+        localStorage.setItem("visibleBrother", "Dillon")
+    } else if (visibleBrother === "Connor") {
+        showConnor()
+        localStorage.setItem("visibleBrother", "Connor")
+    } else {
+        // Show Dillon's page as the default
+        showDillon()
+        localStorage.setItem("visibleBrother", "Dillon")
+    }
+}
+
+generalInit()
+
 
