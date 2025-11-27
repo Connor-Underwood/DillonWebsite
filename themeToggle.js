@@ -15,7 +15,7 @@ function toggleTheme() {
         // Switching to dark mode
         moonIcon.classList.remove("hidden")
         sunIcon.classList.add("hidden")
-        document.body.style.backgroundColor = "black"
+        document.body.style.backgroundColor = "rgb(30,30,30)"
         document.body.style.color = "white"
         isDarkMode = true
     }

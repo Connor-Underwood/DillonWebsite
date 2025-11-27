@@ -18,14 +18,27 @@ ul {
   list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .hidden {
     display: none;
 }
 
+.top-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-left-container {
+    padding-left: 50px; 
+}
 
 .top-right-container {
-    width: 100%;    
-
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -36,14 +49,35 @@ ul {
 
 .top-right-container-elements {
     border: none;
+    transition: transform 0.3s ease;
 }
+
+.top-right-container-elements:hover {
+    transform: scale(1.1);
+}
+
+.social-link-logo {
+    border-radius: 12.5px;
+}
+
 
 #internship-list {
     display: flex;
     align-items: center;
 }
 
+#research-experience-list {
+    display: flex;
+    align-items: center;
+}
+
 .internship-list-element {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.research-experience-list-element {
     border-style: solid;
     border-width: 1px;
     border-color: black;

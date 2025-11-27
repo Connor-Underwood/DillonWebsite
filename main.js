@@ -30,7 +30,6 @@ function generalInit() {
     configureBrotherToggle()
     configureThemeToggle()
     let visibleBrother = localStorage.getItem("visibleBrother")
-    console.log(visibleBrother)
     if (visibleBrother === "Dillon") {
         showDillon()
         localStorage.setItem("visibleBrother", "Dillon")

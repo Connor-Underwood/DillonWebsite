@@ -44,7 +44,6 @@ function buildInternships() {
     for (let i = 0; i < internships.length; i++) {
         let internship = internships[i]
         let internshipListElement = document.createElement("li")
-        console.log("setting class name")
         internshipListElement.className = "internship-list-element"
 
         let internshipListElementButton = document.createElement("button")
